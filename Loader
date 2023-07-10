@@ -5,267 +5,6 @@
 local Converted = {
 	["_ScreenGui"] = Instance.new("ScreenGui");
 	["_Frame"] = Instance.new("Frame");
-	["_UIStroke"] = Instance.new("UIStroke");
-	["_UIGradient"] = Instance.new("UIGradient");
-	["_TextLaber"] = Instance.new("TextLabel");
-	["_UICorner"] = Instance.new("UICorner");
-	["_LocalScript"] = Instance.new("LocalScript");
-	["_LocalScript1"] = Instance.new("LocalScript");
-	["_TextButton"] = Instance.new("TextButton");
-	["_LocalScript2"] = Instance.new("LocalScript");
-}
-
--- Properties:
-
-Converted["_ScreenGui"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Converted["_ScreenGui"].Parent = game:GetService("CoreGui")
-
-Converted["_Frame"].BackgroundColor3 = Color3.fromRGB(80.00000283122063, 80.00000283122063, 80.00000283122063)
-Converted["_Frame"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_Frame"].BorderSizePixel = 0
-Converted["_Frame"].Position = UDim2.new(0.563219726, 0, 0.28553617, 0)
-Converted["_Frame"].Size = UDim2.new(0, 100, 0, 289)
-Converted["_Frame"].Parent = Converted["_ScreenGui"]
-
-Converted["_UIStroke"].Color = Color3.fromRGB(255, 255, 255)
-Converted["_UIStroke"].Thickness = 15
-Converted["_UIStroke"].Parent = Converted["_Frame"]
-
-Converted["_UIGradient"].Color = ColorSequence.new{
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 178.00000458955765, 162.00000554323196)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(61.00000016391277, 245.00000059604645, 255))
-}
-Converted["_UIGradient"].Parent = Converted["_UIStroke"]
-
-Converted["_TextLaber"].Font = Enum.Font.SourceSansBold
-Converted["_TextLaber"].Text = "Utillity"
-Converted["_TextLaber"].TextColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_TextLaber"].TextSize = 25
-Converted["_TextLaber"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_TextLaber"].BackgroundTransparency = 1
-Converted["_TextLaber"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_TextLaber"].BorderSizePixel = 0
-Converted["_TextLaber"].Size = UDim2.new(0, 100, 0, 56)
-Converted["_TextLaber"].Name = "TextLaber"
-Converted["_TextLaber"].Parent = Converted["_Frame"]
-
-Converted["_UICorner"].Parent = Converted["_Frame"]
-
-Converted["_TextButton"].Font = Enum.Font.SourceSans
-Converted["_TextButton"].Text = "Invisible"
-Converted["_TextButton"].TextColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_TextButton"].TextSize = 20
-Converted["_TextButton"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_TextButton"].BackgroundTransparency = 0.5
-Converted["_TextButton"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_TextButton"].BorderSizePixel = 0
-Converted["_TextButton"].Position = UDim2.new(0, 0, 0.143474996, 0)
-Converted["_TextButton"].Size = UDim2.new(0, 100, 0, 50)
-Converted["_TextButton"].Parent = Converted["_Frame"]
-
--- Function to execute the Lua script:
-local function executeScript()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/ChangedIsAnewLuaCoder/RyuExploits/main/Invisible", true))()
-end
-
--- Event handler for TextButton click:
-Converted["_TextButton"].MouseButton1Click:Connect(function()
-	executeScript()
-end)
-
--- Fake Module Scripts:
-
-local fake_module_scripts = {}
-
-
--- Fake Local Scripts:
-
-local function MSLLOOR_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
-	local script = Instance.new("LocalScript")
-	script.Name = "LocalScript"
-	script.Parent = Converted["_Frame"]
-	local req = require
-	local require = function(obj)
-		local fake = fake_module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
-	local UserInputService = game:GetService("UserInputService")
-
-	local function onInputBegan(input, gameProcessedEvent)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then
-			executeScript()
-		end
-	end
-
-	UserInputService.InputBegan:Connect(onInputBegan)
-end
-
-Converted["_TextButton"].TextColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_TextButton"].TextSize = 20
-Converted["_TextButton"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_TextButton"].BackgroundTransparency = 0.5
-Converted["_TextButton"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_TextButton"].BorderSizePixel = 0
-Converted["_TextButton"].Position = UDim2.new(0, 0, 0.143474996, 0)
-Converted["_TextButton"].Size = UDim2.new(0, 100, 0, 50)
-Converted["_TextButton"].Parent = Converted["_Frame"]
-
--- Fake Module Scripts:
-
-local fake_module_scripts = {}
-
-
--- Fake Local Scripts:
-
-local function MSLLOOR_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_Frame"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
-
-	player = game.Players.LocalPlayer
-	
-	player:GetMouse().KeyDown:Connect(function(key)
-		if key == "v" and script.Parent.Visible == false then
-			script.Parent.Visible = true
-		else
-			if key == "v" and script.Parent.Visible == true then
-				script.Parent.Visible = false
-			end
-		end
-	end)
-end
-local function FMYKCWL_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_Frame"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
-
-	local UIgradient = script.Parent.UIStroke.UIGradient
-	local runService = game:GetService("RunService")
-	
-	runService.RenderStepped:Connect(function()
-		UIgradient.Rotation += 2
-	end)
-end
-local function FNSTE_fake_script() -- Fake Script: StarterGui.ScreenGui.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_ScreenGui"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
-
-	frame = script.Parent.Frame
-	frame.Draggable = true
-	frame.Selectable = true
-	frame.Active = true
-end
-
-coroutine.wrap(MSLLOOR_fake_script)()
-coroutine.wrap(FMYKCWL_fake_script)()
-coroutine.wrap(FNSTE_fake_script)()
-
--- Generated using RoadToGlory's Converter v1.1 (RoadToGlory#9879)
-
--- Instances:
-
-local Converted = {
-	["_ScreenGui"] = Instance.new("ScreenGui");
-	["_TextLabel"] = Instance.new("TextLabel");
-	["_UIStroke"] = Instance.new("UIStroke");
-	["_UIGradient"] = Instance.new("UIGradient");
-	["_LocalScript"] = Instance.new("LocalScript");
-}
-
--- Properties:
-
-Converted["_ScreenGui"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Converted["_ScreenGui"].Parent = game:GetService("CoreGui")
-
-Converted["_TextLabel"].Font = Enum.Font.Bangers
-Converted["_TextLabel"].Text = "Ryu"
-Converted["_TextLabel"].TextColor3 = Color3.fromRGB(23.000000528991222, 220.00001728534698, 250.00001549720764)
-Converted["_TextLabel"].TextSize = 100
-Converted["_TextLabel"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_TextLabel"].BackgroundTransparency = 1
-Converted["_TextLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
-Converted["_TextLabel"].BorderSizePixel = 0
-Converted["_TextLabel"].Position = UDim2.new(0.830985963, 0, 0.0523690768, 0)
-Converted["_TextLabel"].Size = UDim2.new(0, 200, 0, 50)
-Converted["_TextLabel"].Parent = Converted["_ScreenGui"]
-
-Converted["_UIStroke"].Thickness = 15
-Converted["_UIStroke"].Parent = Converted["_TextLabel"]
-
-Converted["_UIGradient"].Color = ColorSequence.new{
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(38.0000015348196, 161.0000056028366, 255)),
-	ColorSequenceKeypoint.new(0.7871972322463989, Color3.fromRGB(24.000000469386578, 255, 217.0000022649765)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(76.0000030696392, 16.000000946223736, 255))
-}
-Converted["_UIGradient"].Rotation = 20
-Converted["_UIGradient"].Parent = Converted["_UIStroke"]
-
--- Fake Module Scripts:
-
-local fake_module_scripts = {}
-
-
--- Fake Local Scripts:
-
-local function ZAIR_fake_script() -- Fake Script: StarterGui.ScreenGui.TextLabel.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_TextLabel"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
-
-	local UIgradient = script.Parent.UIStroke.UIGradient
-	local runService = game:GetService("RunService")
-	
-	runService.RenderStepped:Connect(function()
-		UIgradient.Rotation += 2
-	end) 
-end
-
-coroutine.wrap(ZAIR_fake_script)()
-
--- Generated using RoadToGlory's Converter v1.1 (RoadToGlory#9879)
-
--- Instances:
-
-local Converted = {
-	["_ScreenGui"] = Instance.new("ScreenGui");
-	["_Frame"] = Instance.new("Frame");
 	["_LocalScript"] = Instance.new("LocalScript");
 	["_UIStroke"] = Instance.new("UIStroke");
 	["_UIGradient"] = Instance.new("UIGradient");
@@ -319,7 +58,7 @@ local fake_module_scripts = {}
 
 -- Fake Local Scripts:
 
-local function SHEKZJ_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
+local function UYLZF_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Frame"]
@@ -339,7 +78,7 @@ local function SHEKZJ_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.L
 		UIgradient.Rotation += 2
 	end)
 end
-local function HKOUHQS_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
+local function UULQH_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Frame"]
@@ -364,7 +103,7 @@ local function HKOUHQS_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.
 		end
 	end)
 end
-local function WQMHLE_fake_script() -- Fake Script: StarterGui.ScreenGui.LocalScript
+local function ZMYC_fake_script() -- Fake Script: StarterGui.ScreenGui.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_ScreenGui"]
@@ -383,6 +122,217 @@ local function WQMHLE_fake_script() -- Fake Script: StarterGui.ScreenGui.LocalSc
 	frame.Active = true
 end
 
-coroutine.wrap(SHEKZJ_fake_script)()
-coroutine.wrap(HKOUHQS_fake_script)()
-coroutine.wrap(WQMHLE_fake_script)()
+coroutine.wrap(UYLZF_fake_script)()
+coroutine.wrap(UULQH_fake_script)()
+coroutine.wrap(ZMYC_fake_script)()
+
+-- Generated using RoadToGlory's Converter v1.1 (RoadToGlory#9879)
+
+-- Instances:
+
+local Converted = {
+	["_ScreenGui"] = Instance.new("ScreenGui");
+	["_Frame"] = Instance.new("Frame");
+	["_UIStroke"] = Instance.new("UIStroke");
+	["_UIGradient"] = Instance.new("UIGradient");
+	["_TextLaber"] = Instance.new("TextLabel");
+	["_UICorner"] = Instance.new("UICorner");
+	["_LocalScript"] = Instance.new("LocalScript");
+	["_LocalScript1"] = Instance.new("LocalScript");
+	["_TextButton"] = Instance.new("TextButton");
+	["_LocalScript2"] = Instance.new("LocalScript");
+}
+
+-- Properties:
+
+Converted["_ScreenGui"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Converted["_ScreenGui"].Parent = game:GetService("CoreGui")
+
+Converted["_Frame"].BackgroundColor3 = Color3.fromRGB(80.00000283122063, 80.00000283122063, 80.00000283122063)
+Converted["_Frame"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_Frame"].BorderSizePixel = 0
+Converted["_Frame"].Position = UDim2.new(0.563219726, 0, 0.28553617, 0)
+Converted["_Frame"].Size = UDim2.new(0, 100, 0, 289)
+Converted["_Frame"].Visible = false
+Converted["_Frame"].Parent = Converted["_ScreenGui"]
+
+Converted["_UIStroke"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke"].Thickness = 15
+Converted["_UIStroke"].Parent = Converted["_Frame"]
+
+Converted["_UIGradient"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 178.00000458955765, 162.00000554323196)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(61.00000016391277, 245.00000059604645, 255))
+}
+Converted["_UIGradient"].Parent = Converted["_UIStroke"]
+
+Converted["_TextLaber"].Font = Enum.Font.SourceSansBold
+Converted["_TextLaber"].Text = "Utillity"
+Converted["_TextLaber"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLaber"].TextSize = 25
+Converted["_TextLaber"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLaber"].BackgroundTransparency = 1
+Converted["_TextLaber"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextLaber"].BorderSizePixel = 0
+Converted["_TextLaber"].Size = UDim2.new(0, 100, 0, 56)
+Converted["_TextLaber"].Name = "TextLaber"
+Converted["_TextLaber"].Parent = Converted["_Frame"]
+
+Converted["_UICorner"].Parent = Converted["_Frame"]
+
+Converted["_TextButton"].Font = Enum.Font.SourceSans
+Converted["_TextButton"].Text = "Invisible"
+Converted["_TextButton"].TextColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextButton"].TextSize = 20
+Converted["_TextButton"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextButton"].BackgroundTransparency = 1
+Converted["_TextButton"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextButton"].BorderSizePixel = 0
+Converted["_TextButton"].Position = UDim2.new(0, 0, 0.143474996, 0)
+Converted["_TextButton"].Size = UDim2.new(0, 100, 0, 50)
+Converted["_TextButton"].Parent = Converted["_Frame"]
+
+-- Fake Module Scripts:
+
+local fake_module_scripts = {}
+
+
+-- Fake Local Scripts:
+
+local function DMIUYLX_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_Frame"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	player = game.Players.LocalPlayer
+	
+	player:GetMouse().KeyDown:Connect(function(key)
+		if key == "v" and script.Parent.Visible == false then
+			script.Parent.Visible = true
+		else
+			if key == "v" and script.Parent.Visible == true then
+				script.Parent.Visible = false
+			end
+		end
+	end)
+end
+local function IMRVJT_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_Frame"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	local UIgradient = script.Parent.UIStroke.UIGradient
+	local runService = game:GetService("RunService")
+	
+	runService.RenderStepped:Connect(function()
+		UIgradient.Rotation += 2
+	end)
+end
+local function RMDOKV_fake_script() -- Fake Script: StarterGui.ScreenGui.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_ScreenGui"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	frame = script.Parent.Frame
+	frame.Draggable = true
+	frame.Selectable = true
+	frame.Active = true
+end
+
+coroutine.wrap(DMIUYLX_fake_script)()
+coroutine.wrap(IMRVJT_fake_script)()
+coroutine.wrap(RMDOKV_fake_script)()
+
+-- Generated using RoadToGlory's Converter v1.1 (RoadToGlory#9879)
+
+-- Instances:
+
+local Converted = {
+	["_ScreenGui"] = Instance.new("ScreenGui");
+	["_TextLabel"] = Instance.new("TextLabel");
+	["_UIStroke"] = Instance.new("UIStroke");
+	["_UIGradient"] = Instance.new("UIGradient");
+	["_LocalScript"] = Instance.new("LocalScript");
+}
+
+-- Properties:
+
+Converted["_ScreenGui"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Converted["_ScreenGui"].Parent = game:GetService("CoreGui")
+
+Converted["_TextLabel"].Font = Enum.Font.Bangers
+Converted["_TextLabel"].Text = "Ryu"
+Converted["_TextLabel"].TextColor3 = Color3.fromRGB(23.000000528991222, 220.00001728534698, 250.00001549720764)
+Converted["_TextLabel"].TextSize = 100
+Converted["_TextLabel"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel"].BackgroundTransparency = 1
+Converted["_TextLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
+Converted["_TextLabel"].BorderSizePixel = 0
+Converted["_TextLabel"].Position = UDim2.new(0.830985963, 0, 0.0523690768, 0)
+Converted["_TextLabel"].Size = UDim2.new(0, 200, 0, 50)
+Converted["_TextLabel"].Parent = Converted["_ScreenGui"]
+
+Converted["_UIStroke"].Thickness = 15
+Converted["_UIStroke"].Parent = Converted["_TextLabel"]
+
+Converted["_UIGradient"].Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(38.0000015348196, 161.0000056028366, 255)),
+	ColorSequenceKeypoint.new(0.7871972322463989, Color3.fromRGB(24.000000469386578, 255, 217.0000022649765)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(76.0000030696392, 16.000000946223736, 255))
+}
+Converted["_UIGradient"].Rotation = 20
+Converted["_UIGradient"].Parent = Converted["_UIStroke"]
+
+-- Fake Module Scripts:
+
+local fake_module_scripts = {}
+
+
+-- Fake Local Scripts:
+
+local function OUIXKKM_fake_script() -- Fake Script: StarterGui.ScreenGui.TextLabel.LocalScript
+    local script = Instance.new("LocalScript")
+    script.Name = "LocalScript"
+    script.Parent = Converted["_TextLabel"]
+    local req = require
+    local require = function(obj)
+        local fake = fake_module_scripts[obj]
+        if fake then
+            return fake()
+        end
+        return req(obj)
+    end
+
+	local UIgradient = script.Parent.UIStroke.UIGradient
+	local runService = game:GetService("RunService")
+	
+	runService.RenderStepped:Connect(function()
+		UIgradient.Rotation += 2
+	end) 
+end
+
+coroutine.wrap(OUIXKKM_fake_script)()
