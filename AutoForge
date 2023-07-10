@@ -1,0 +1,4 @@
+	if bedwarsStore.matchState == 1 and entityLibrary.isAlive then
+		if entityLibrary.character.HumanoidRootPart.Velocity.Magnitude <= 0.01 then
+			buyForge(bedwars.ForgeConstants.Dagger)
+		end
