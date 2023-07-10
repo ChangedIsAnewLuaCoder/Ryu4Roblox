@@ -12,6 +12,7 @@ local Converted = {
 	["_LocalScript"] = Instance.new("LocalScript");
 	["_LocalScript1"] = Instance.new("LocalScript");
 	["_TextButton"] = Instance.new("TextButton");
+	["_TextButton1"] = Instance.new("TextButton");
 	["_LocalScript2"] = Instance.new("LocalScript");
 }
 
@@ -56,11 +57,11 @@ Converted["_TextButton"].Text = "Invisible"
 Converted["_TextButton"].TextColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextButton"].TextSize = 20
 Converted["_TextButton"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Converted["_TextButton"].BackgroundTransparency = 0.5
+Converted["_TextButton"].BackgroundTransparency = 1
 Converted["_TextButton"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextButton"].BorderSizePixel = 0
-Converted["_TextButton"].Position = UDim2.new(0, 0, 0.143474996, 0)
-Converted["_TextButton"].Size = UDim2.new(0, 100, 0, 50)
+Converted["_TextButton"].Position = UDim2.new(0, 0, 0.143474966, 0)
+Converted["_TextButton"].Size = UDim2.new(0, 100, 0, 28)
 Converted["_TextButton"].Parent = Converted["_Frame"]
 
 Converted["_TextButton1"].Font = Enum.Font.SourceSans
@@ -77,80 +78,50 @@ Converted["_TextButton1"].Parent = Converted["_Frame"]
 
 -- Function to execute the Lua script:
 local function executeScript()
-local function dumpRemote(tab)
-    for i,v in pairs(tab) do
-        if v == "Client" then
-            return tab[i + 1]
-        end
-    end
-    return ""
-end
+	local function dumpRemote(tab)
+		for i,v in pairs(tab) do
+			if v == "Client" then
+				return tab[i + 1]
+			end
+		end
+		return ""
+	end
 
-local KnitGotten, KnitClient
-repeat
-    KnitGotten, KnitClient = pcall(function()
-        return debug.getupvalue(require(game:GetService("Players").LocalPlayer.PlayerScripts.TS.knit).setup, 6)
-    end)
-    if KnitGotten then break end
-    task.wait()
-until KnitGotten
+	local KnitGotten, KnitClient
+	repeat
+		KnitGotten, KnitClient = pcall(function()
+			return debug.getupvalue(require(game:GetService("Players").LocalPlayer.PlayerScripts.TS.knit).setup, 6)
+		end)
+		if KnitGotten then break end
+		task.wait()
+	until KnitGotten
 
-local JuggernautRemote = dumpRemote(debug.getconstants(debug.getprotos(debug.getprotos(KnitClient.Controllers.JuggernautController.KnitStart)[1])[4]))
+	local JuggernautRemote = dumpRemote(debug.getconstants(debug.getprotos(debug.getprotos(KnitClient.Controllers.JuggernautController.KnitStart)[1])[4]))
 
-local args = {
-    [1] = {
-        blockInstance = game:GetService("ReplicatedStorage").Assets.Blocks.juggernaut_crate
-    }
-}
-game:GetService("ReplicatedStorage").rbxts_include.node_modules["@rbxts"].net.out._NetManaged[JuggernautRemote]:FireServer(unpack(args))
+	local args = {
+		[1] = {
+			blockInstance = game:GetService("ReplicatedStorage").Assets.Blocks.juggernaut_crate
+		}
+	}
+	game:GetService("ReplicatedStorage").rbxts_include.node_modules["@rbxts"].net.out._NetManaged[JuggernautRemote]:FireServer(unpack(args))
 end
 
 -- Event handler for TextButton click:
 Converted["_TextButton1"].MouseButton1Click:Connect(function()
-    executeScript()
+	executeScript()
 end)
 
 
 -- Function to execute the Lua script:
 local function executeScript()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ChangedIsAnewLuaCoder/RyuExploits/main/Invisible", true))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ChangedIsAnewLuaCoder/RyuExploits/main/Invisible", true))()
 end
 
 -- Event handler for TextButton click:
 Converted["_TextButton"].MouseButton1Click:Connect(function()
-    executeScript()
+	executeScript()
 end)
 
--- Fake Module Scripts:
-
-local fake_module_scripts = {}
-
-
--- Fake Local Scripts:
-
-local function MSLLOOR_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_Frame"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
-
-    local UserInputService = game:GetService("UserInputService")
-    
-    local function onInputBegan(input, gameProcessedEvent)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
-            executeScript()
-        end
-    end
-    
-    UserInputService.InputBegan:Connect(onInputBegan)
-end
 
 -- Fake Module Scripts:
 
@@ -159,38 +130,7 @@ local fake_module_scripts = {}
 
 -- Fake Local Scripts:
 
-local function MSLLOOR_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
-    local script = Instance.new("LocalScript")
-    script.Name = "LocalScript"
-    script.Parent = Converted["_Frame"]
-    local req = require
-    local require = function(obj)
-        local fake = fake_module_scripts[obj]
-        if fake then
-            return fake()
-        end
-        return req(obj)
-    end
-
-    local UserInputService = game:GetService("UserInputService")
-    
-    local function onInputBegan(input, gameProcessedEvent)
-        if input.UserInputType == Enum.UserInputType.MouseButton1 then
-            executeScript()
-        end
-    end
-    
-    UserInputService.InputBegan:Connect(onInputBegan)
-end
-
--- Fake Module Scripts:
-
-local fake_module_scripts = {}
-
-
--- Fake Local Scripts:
-
-local function FGVTTO_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
+local function HFTAF_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Frame"]
@@ -215,7 +155,7 @@ local function FGVTTO_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.L
 		end
 	end)
 end
-local function ODOP_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
+local function YTXPIBB_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_Frame"]
@@ -235,7 +175,7 @@ local function ODOP_fake_script() -- Fake Script: StarterGui.ScreenGui.Frame.Loc
 		UIgradient.Rotation += 2
 	end)
 end
-local function IPURQ_fake_script() -- Fake Script: StarterGui.ScreenGui.LocalScript
+local function BIFYHHD_fake_script() -- Fake Script: StarterGui.ScreenGui.LocalScript
     local script = Instance.new("LocalScript")
     script.Name = "LocalScript"
     script.Parent = Converted["_ScreenGui"]
@@ -254,6 +194,6 @@ local function IPURQ_fake_script() -- Fake Script: StarterGui.ScreenGui.LocalScr
 	frame.Active = true
 end
 
-coroutine.wrap(FGVTTO_fake_script)()
-coroutine.wrap(ODOP_fake_script)()
-coroutine.wrap(IPURQ_fake_script)()
+coroutine.wrap(HFTAF_fake_script)()
+coroutine.wrap(YTXPIBB_fake_script)()
+coroutine.wrap(BIFYHHD_fake_script)()
